@@ -25,7 +25,10 @@ const Table = (props) => {
         } else {
             delete selectedInformation[info[keys[0]]];
         }
-        if (data.length !== Object.keys(selectedInformation).length) {
+        if (!Object.keys(selectedInformation).length) {
+            document.getElementById('selectAll').indeterminate = false;
+            document.getElementById('selectAll').checked = false;
+        } else if (data.length !== Object.keys(selectedInformation).length) {
             document.getElementById('selectAll').indeterminate = true;
             document.getElementById('selectAll').checked = false;
         } else {

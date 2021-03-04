@@ -32,3 +32,6 @@ input {
 .download {
     cursor: pointer;
 }
+li {
+    text-align: left;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './layout/Header';
+import Footer from "./layout/Footer";
 import Table from './components/Table';
 function App() {
     const [tableInformation, setTableInformation] = useState([]);
@@ -56,6 +57,7 @@ function App() {
             data={tableInformation}
           />
       </div>
+      <Footer />
     </div>
   );
 }
