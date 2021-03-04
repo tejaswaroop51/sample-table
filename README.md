@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Steps to run this project in local
 ```
+NODE VERSION >= 14
 npm install --global yarn
 git clone https://github.com/tejaswaroop51/sample-table.git
 cd sample-table
