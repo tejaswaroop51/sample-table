@@ -16,10 +16,19 @@
     font-size: 0.8rem;
     padding: 0.5rem;
 }
+.row:hover {
+    background-color: #F0F0F0;
+}
 
 row-heading:first-letter {
     text-transform:capitalize;
 }
 input:indeterminate {
     background: lime;
+}
+input {
+    cursor: pointer;
+}
+.download {
+    cursor: pointer;
 }

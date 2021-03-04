@@ -47,6 +47,19 @@ const Table = (props) => {
             setSelectedInfo(selectedInformation);
         }
     }
+    const downloadItems = () => {
+        const selectedInformation = { ...selectedInfo };
+        const items = Object.values(selectedInformation);
+        let template = '';
+        items.forEach((item) => {
+            if (item.status === 'available') {
+                template += `${item.name} ${item.path} \n`;
+            }
+        });
+        if(template !== '') {
+            window.alert(template);
+        }
+    }
     const information = [];
     data.forEach((info, i) => {
         const keys = Object.keys(info);
@@ -55,7 +68,7 @@ const Table = (props) => {
                 columns={info}
                 selectInfo={selectInfo}
                 selectedInfo={selectedInfo[info[keys[0]]]}
-                key={i}
+                tableIndex={i}
             />
         )
     })
@@ -79,8 +92,8 @@ const Table = (props) => {
         selectedInformation = `${Object.keys(selectedInfo).length} Selected`;
     }
     return(
-        <div className="table-information" key={-1}>
-            <div className="row">
+        <div className="table-information">
+            <div className="row" key={-1}>
                 <div className="col">
                     <input
                         type="checkbox"
@@ -90,7 +103,7 @@ const Table = (props) => {
                     />
                 </div>
                 <div className="col">{selectedInformation}</div>
-                <div className="col">
+                <div className="col download" onClick={downloadItems}>
                     <FontAwesomeIcon icon={faDownload} />
                     &nbsp;
                     <span>Download Selected</span>

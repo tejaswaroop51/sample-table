@@ -1,7 +1,7 @@
 import React from 'react';
 import TableColumn from './TableColumn';
 const TableRow = (props) => {
-    const { columns, selectInfo, selectedInfo, key } = props;
+    const { columns, selectInfo, selectedInfo, tableIndex } = props;
     const keys = Object.keys(columns);
     let checked = false;
     if (selectedInfo && selectedInfo[keys[0]]) {
@@ -31,7 +31,7 @@ const TableRow = (props) => {
     }
     return(
         <React.Fragment>
-            <div className="row" key={key}>
+            <div className="row" key={tableIndex} style={{backgroundColor: checked ? '#F0F0F0' : "" }}>
                 {tableColumns}
             </div>
         </React.Fragment>
