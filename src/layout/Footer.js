@@ -4,6 +4,7 @@ const Footer = () => {
     return(
         <div>
             <h2>Requirements</h2>
+            <h3> Note: Due to some time constraints I did not write unit tests. I can discuss this during code review. Please forgive me</h3>
             <ul>
                 <li>
                     Only those that have a status of "available" are currently able to be downloaded. Your implementation should manage this.
